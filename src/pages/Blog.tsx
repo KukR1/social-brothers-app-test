@@ -41,7 +41,6 @@ const Blog = () => {
         </>
       ) : (
         <div className="col-span-2 mx-auto overflow-hidden flex flex-col gap-6">
-          <div className="text-sb-gray">Something went wrong..</div>
           <ClipLoader color="orange" loading size={150} />
         </div>
       )}
