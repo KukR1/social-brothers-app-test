@@ -1,12 +1,11 @@
 import Logo from '../assets/Logo';
-import bgImage from '../assets/header-photo.jpg';
+import bgImage from '../assets/header-photo.png';
 import { ActiveNavLink } from '../links/ActiveNavLink';
 
 interface HeaderProps {
   classNames: string;
 }
 
-/* Used an image from the web, as there was not your's in bitbucket */
 const style = {
   backgroundImage: `url(${bgImage})`,
   backgroundSize: 'cover',
