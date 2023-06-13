@@ -3,7 +3,7 @@ import Pagination from 'rc-pagination';
 import 'rc-pagination/assets/index.css';
 import usePosts from '../hooks/usePosts';
 import Card from '../components/card/Card';
-import ClipLoader from 'react-spinners/ClipLoader';
+import { ClipLoader } from 'react-spinners';
 
 const Blog = () => {
   const [currentPage, setCurrentPage] = useState(1);
