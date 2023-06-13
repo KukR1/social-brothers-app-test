@@ -1,8 +1,8 @@
 import { toast } from 'react-toastify';
 
-export const postFormSubmit = async (formData: FormData) => {
+export const postBlog = async (formData: FormData) => {
   try {
-    const response = await fetch(`${import.meta.env.VITE_BASE_URL}/posts`, {
+    const response = await fetch(`${import.meta.env.VITE_BASE_URL_API}/posts`, {
       method: 'POST',
       headers: {
         token: import.meta.env.VITE_APP_API_KEY,

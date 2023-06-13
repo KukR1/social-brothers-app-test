@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import MainButton from './buttons/MainButton';
 import { TextArea } from './input/TextArea';
 import { Dropdown } from './input/Dropdown';
 import { Input } from './input/Input';
 import { Category } from '../types/DataGeneric';
-import { postFormSubmit } from '../helpers/postHelper';
+import { postBlog } from '../helpers/postBlog';
 import ImageUpload from './input/ImageUpload';
-import { toast } from 'react-toastify';
 
 interface FormProps {
   categories: Category[];
@@ -15,7 +14,7 @@ interface FormProps {
 export const Form: React.FC<FormProps> = ({ categories }) => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
-  const [categoryId, setCategoryId] = useState(1);
+  const [categoryId, setCategoryId] = useState<number | null>(null);
   const [image, setImage] = useState<File | undefined>(undefined);
   const [disabled, setDisabled] = useState(true);
 
@@ -37,13 +36,15 @@ export const Form: React.FC<FormProps> = ({ categories }) => {
     const formData = new FormData();
     formData.append('title', title);
     formData.append('content', content);
-    formData.append('category_id', categoryId.toString());
+    if (categoryId !== null) {
+      formData.append('category_id', categoryId.toString());
+    }
 
     if (image) {
       formData.append('image', image);
     }
 
-    await postFormSubmit(formData);
+    await postBlog(formData);
 
     setTitle('');
     setContent('');
@@ -92,7 +93,7 @@ export const Form: React.FC<FormProps> = ({ categories }) => {
             placeholder="Geen categorie"
             required
             name="category_id"
-            value={categoryId.toString()}
+            value={categoryId ? categoryId.toString() : ''}
             onChange={handleCategoryChange}
             options={categories.map((category) => ({
               label: category.name,

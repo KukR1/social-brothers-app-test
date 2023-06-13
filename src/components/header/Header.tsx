@@ -1,5 +1,5 @@
 import Logo from '../assets/Logo';
-import bgImage from '../../assets/header-photo.jpg';
+import bgImage from '../assets/header-photo.jpg';
 import { ActiveNavLink } from '../links/ActiveNavLink';
 
 interface HeaderProps {

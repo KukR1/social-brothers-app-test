@@ -1,11 +1,9 @@
-import { FC } from 'react';
-
 interface ImageUploadProps {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   imageName: string;
 }
 
-const ImageUpload: FC<ImageUploadProps> = ({ onChange, imageName }) => {
+const ImageUpload = ({ onChange, imageName }: ImageUploadProps) => {
   return (
     <div className="relative flex gap-4 items-center bg-gray-100 py-2 px-3 w-[9rem] h-[2.5rem]">
       <label htmlFor="image-upload" className="cursor-pointer">

@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface CardProps {
   imageUrl: string;
   date: string;
@@ -25,8 +23,8 @@ const Card: React.FC<CardProps> = ({
           backgroundPosition: 'center',
         }}
       >
-        <div className="text-white text-[0.5rem]">{date}</div>
-        <div className="text-white text-[0.5rem]">{category}</div>
+        <div className="text-white text-[0.5rem] italic">{date}</div>
+        <div className="text-white text-[0.5rem] italic">{category}</div>
       </div>
       <div className="flex flex-col gap-3 px-4 py-3 break-words overflow-hidden">
         <div className="text-sb-black-100 font-bold text-2xl text-ellipsis overflow-hidden line-clamp-1">

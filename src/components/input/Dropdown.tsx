@@ -38,7 +38,7 @@ export const Dropdown = ({
       className={`${baseClass} bg-gray-200 pl-3 pr-8 appearance-none`}
       style={arrowStyle}
     >
-      <option value="dsada" disabled>
+      <option value="" className="italic" disabled>
         {placeholder}
       </option>
       {options &&

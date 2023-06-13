@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface ButtonProps {
   text: string;
   disabled?: boolean;
@@ -11,8 +9,8 @@ const MainButton: React.FC<ButtonProps> = ({ text, onClick, disabled }) => {
     <button
       onClick={onClick}
       className={`${
-        disabled ? 'bg-slate-800' : 'bg-orange-500'
-      }  text-white font-bold text-xs py-2 w-[12rem] m-auto rounded-3xl shadow hover:shadow-lg outline-none focus:outline-none`}
+        disabled ? 'cursor-not-allowed' : 'cursor-pointer hover:shadow-lg'
+      }  text-white bg-orange-500 font-bold text-xs py-2 w-[12rem] m-auto rounded-3xl shadow  outline-none focus:outline-none`}
       type="submit"
       disabled={disabled}
       style={{ transition: 'all .15s ease' }}
